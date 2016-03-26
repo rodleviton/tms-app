@@ -1,0 +1,49 @@
+@import 'base/base';
+
+.default {
+  position: fixed;
+  top: $height-header;
+  width: $width-navbar;
+  height: 100%;
+  border-left: 1px solid #fff;
+  background: $darker-gray;
+  z-index: $zindex-navbar;
+}
+
+.nav {
+  border-top: 1px solid $darkest-gray;
+  top: 0;
+  position: absolute;
+  left: -1px;
+  width: $width-navbar;
+
+  a {
+    color: white;
+    background: $darker-gray;
+    border-left: 1px solid #fff;
+    display: block;
+    padding: $padding-container;
+    text-transform: uppercase;
+    font-size: em(12);
+    font-weight: 400;
+    border-bottom: 1px solid $darkest-gray;
+    @include transition(background $base-duration $base-timing);
+
+    &:hover {
+      background: lighten($darker-gray, 5%);
+      color: #fff;
+    }
+
+    &:focus {
+      color: #fff;
+    }
+
+    &.active {
+      background: $orange;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}

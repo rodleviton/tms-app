@@ -1,0 +1,35 @@
+@import 'base/base';
+@import 'core/components/buttons';
+
+:local {
+  .logo {
+    float: left;
+    width: $width-navbar;
+    border-left: 1px solid #fff;
+    height: $height-header;
+    background: $darkest-gray;
+    display: block;
+    svg {
+      margin-top: 13px;
+      margin-left: 25px;
+    }
+  }
+
+  .user-actions {
+    float: right;
+    padding: 20px 40px;
+    vertical-align: middle;
+    border-left: 1px solid $lighter-gray;
+    height: $height-header;
+  }
+
+  .default {
+    width: 100%;
+    height: $height-header;
+    left: 0;
+    background: white;
+    border-bottom: 1px solid $lighter-gray;
+    position: fixed;
+    z-index: $zindex-header;
+  }
+}

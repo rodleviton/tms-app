@@ -1,0 +1,69 @@
+// Containers
+$padding-container: 20px;
+
+// Components
+$height-header: 90px;
+$width-navbar: 110px;
+
+// Z-Index
+$zindex-view-container: 1;
+$zindex-navbar: 5;
+$zindex-header: 10;
+
+// Breakpoints
+$medium-screen: 600px;
+$large-screen: 900px;
+
+// Typography
+$font-stack-system: "proxima-nova", sans-serif;
+$base-font-family: $font-stack-system;
+$heading-font-family: $base-font-family;
+
+// Font Sizes
+$base-font-size: 1em;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$btn-border-radius: 20px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Colors
+$blue: #1565c0;
+$orange: #F15124;
+
+$darkest-gray: #0B0B0B;
+$darker-gray: #191919;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #c9c9c9;
+$lighter-gray: #eee;
+$lightest-gray: #f7f7f7;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$action-color: $orange;
+
+// Border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: #fff;
+$secondary-background-color: tint($base-border-color, 75%);
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;
+
+// Containers
+$padding-container: 20px;

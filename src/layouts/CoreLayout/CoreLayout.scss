@@ -1,0 +1,10 @@
+@import 'default';
+
+:global {
+  .view-container {
+    top: $height-header;
+    position: relative;
+    z-index: $zindex-view-container;
+    @include clearfix();
+  }
+}
