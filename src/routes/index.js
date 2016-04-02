@@ -13,6 +13,6 @@ import ProjectView from 'views/ProjectView/ProjectView';
 export default (store) => (
   <Route path='/' component={CoreLayout}>
     <IndexRoute component={HomeView} />
-    <Route path='project/:id/:slug' component={ProjectView} />
+    <Route path='project/:id' component={ProjectView} />
   </Route>
 );

@@ -5,7 +5,7 @@ import axios from 'axios';
 // Constants
 // ------------------------------------
 export const FETCH_PROJECT = 'FETCH_PROJECT';
-const BASE_URL = 'http://127.0.0.1:3090/api/v1';
+const BASE_URL = 'http://127.0.0.1:3030';
 
 // ------------------------------------
 // Actions
@@ -16,7 +16,8 @@ const BASE_URL = 'http://127.0.0.1:3090/api/v1';
 // DOUBLE NOTE: there is currently a bug with babel-eslint where a `space-infix-ops` error is
 // incorrectly thrown when using arrow functions, hence the oddity.
 export function fetchProject (id, slug): Action {
-  const request = axios.get(`${BASE_URL}/project/${id}/${slug}`);
+  // const request = axios.get(`${BASE_URL}/projects/${id}?$populate=user&$populate=posts`);
+  const request = axios.get(`${BASE_URL}/projects/${id}`);
 
   return {
     type: FETCH_PROJECT,

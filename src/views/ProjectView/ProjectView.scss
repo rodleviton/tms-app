@@ -1,5 +1,15 @@
 @import 'base/base';
 
+:global {
+  .scrollarea.area {
+    height: 832px;
+  }
+
+  .scrollarea.area-project {
+    height: 987px;
+  }
+}
+
 :local {
   .project {
     width: 60%;
@@ -13,10 +23,10 @@
 
   .container-inner {
     padding: ($padding-container * 2);
-    max-width: 800px;
+    max-width: $max-width;
   }
 
-  .comments {
+  .comments-container {
     width: 40%;
     float: right;
     background: $lightest-gray;
@@ -25,6 +35,13 @@
     position: fixed;
     right: 0;
     top: $height-header;
+  }
+
+  .comments-header {
+    position: fixed;
+    background: #fff;
+    z-index: 1;
+    width: 100%;
   }
 
   .header {
@@ -43,11 +60,20 @@
   }
 
   .avatar {
+    width: $avatar-md-width;
+    height: $avatar-md-height;
     position: absolute;
-    width: 58px;
-    height: 58px;
     bottom: -23px;
     left: $padding-container;
+  }
+
+  .avatar img {
+    display: block;
+    margin: 0em auto;
+    width: 100%;
+    height: 100%;
+    border-radius: $avatar-md-radius;
+    border: 1px solid $base-border-color;
   }
 
   .title {

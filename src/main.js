@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { IntlProvider } from 'react-intl';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import { useRouterHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
@@ -30,6 +31,8 @@ const routes = makeRoutes(store);
 // Now that redux and react-router have been configured, we can render the
 // React application to the DOM!
 ReactDOM.render(
-  <Root history={history} routes={routes} store={store} />,
+  <IntlProvider locale="en">
+    <Root history={history} routes={routes} store={store} />
+  </IntlProvider>,
   document.getElementById('root')
 );

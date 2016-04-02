@@ -1,5 +1,9 @@
+// Defaults
+$max-width: 800px;
+
 // Containers
 $padding-container: 20px;
+$margin-container: 20px;
 
 // Components
 $height-header: 90px;
@@ -15,8 +19,9 @@ $medium-screen: 600px;
 $large-screen: 900px;
 
 // Typography
-$font-stack-system: "proxima-nova", sans-serif;
-$base-font-family: $font-stack-system;
+$font-stack-system: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$proxima-nova:  'proxima-nova', sans-serif;
+$base-font-family: $proxima-nova;
 $heading-font-family: $base-font-family;
 
 // Font Sizes
@@ -43,14 +48,14 @@ $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #c9c9c9;
 $lighter-gray: #eee;
-$lightest-gray: #f7f7f7;
+$lightest-gray: #fafafa;
 
 // Font Colors
 $base-font-color: $dark-gray;
 $action-color: $orange;
 
 // Border
-$base-border-color: $light-gray;
+$base-border-color: $lighter-gray;
 $base-border: 1px solid $base-border-color;
 
 // Background Colors
@@ -67,3 +72,12 @@ $base-timing: ease;
 
 // Containers
 $padding-container: 20px;
+
+// Avatars
+$avatar-sm-radius: 20px;
+$avatar-sm-width: 40px;
+$avatar-sm-height: 40px;
+
+$avatar-md-radius: 30px;
+$avatar-md-width: 60px;
+$avatar-md-height: 60px;
