@@ -7,26 +7,26 @@ type Props = {
   updateLayout: Function,
 };
 
-export class Header extends React.Component<void, Props, void> {
+export class Header extends React.Component < void, Props, void > {
   props: Props;
 
-  componentDidMount () {
+  componentDidMount() {
     const el = document.getElementById('header');
     const elHeight = el ? el.offsetHeight : 0;
     this.props.updateLayout('header', { height: elHeight });
   }
 
-  componentWillUpdate () {
+  componentWillUpdate() {
     // TODO
     // Optimize call to only update if height is different to previous value
     const el = document.getElementById('header');
     const elHeight = el ? el.offsetHeight : 0;
-    this.props.updateLayout('header', { height: el ? el.offsetHeight : 0 });
+    this.props.updateLayout('header', { height: elHeight });
   }
 
-  render () {
+  render() {
     return (
-      <div id="header" className={styles.default}>
+      <header id='header' className={styles.default}>
         <a className={styles.logo}>
           <svg width='56px' height='66px' viewBox='0 0 56 66' version='1.1'>
             <defs></defs>
@@ -44,12 +44,13 @@ export class Header extends React.Component<void, Props, void> {
         <div className={styles['user-actions']}>
           <button className='btn-default vertical-align'>Login <i className='icon-plus'></i></button>
         </div>
-      </div>
+      </header>
+
     );
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   return {
 
   };

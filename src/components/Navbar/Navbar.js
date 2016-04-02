@@ -9,7 +9,7 @@ type Props = {
 export class Navbar extends React.Component {
   props: Props;
 
-  render () {
+  render() {
     return (
       <div className={styles.default}>
         <ul className={styles.nav}>
@@ -35,3 +35,4 @@ export class Navbar extends React.Component {
 }
 
 export default Navbar;
+

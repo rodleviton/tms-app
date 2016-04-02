@@ -1,14 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchComments } from '../redux/modules/comments';
-import styles from '../views/ProjectView/ProjectView.scss';
 import CommentsHeader from '../components/CommentsHeader/CommentsHeader';
 import CommentsList from '../components/CommentsList/CommentsList';
+import styles from '../views/ProjectView/ProjectView.scss';
 
 type Props = {
-  params: {
-    id: string
-  }
+  fetchComments: Function,
+  browser: mixed,
+  layout: mixed,
+  comments: mixed,
+  id: string
 };
 
 export class Comments extends React.Component < void, Props, void > {
@@ -33,8 +35,8 @@ export class Comments extends React.Component < void, Props, void > {
 
     return (
       <div className={styles['comments-container']}>
-        <CommentsHeader></CommentsHeader>
-        <CommentsList comments={this.props.comments}></CommentsList>
+        <CommentsHeader />
+        <CommentsList comments={this.props.comments} />
       </div>
     );
   }
@@ -48,7 +50,7 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-
 export default connect(
   mapStateToProps, { fetchComments }
 )(Comments);
+

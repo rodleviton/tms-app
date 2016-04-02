@@ -15,7 +15,7 @@ const BASE_URL = 'http://127.0.0.1:3030';
 // if you'd like to learn more you can check out: flowtype.org.
 // DOUBLE NOTE: there is currently a bug with babel-eslint where a `space-infix-ops` error is
 // incorrectly thrown when using arrow functions, hence the oddity.
-export function fetchProject (id, slug): Action {
+export function fetchProject(id, slug): Action {
   // const request = axios.get(`${BASE_URL}/projects/${id}?$populate=user&$populate=posts`);
   const request = axios.get(`${BASE_URL}/projects/${id}`);
 
@@ -65,7 +65,7 @@ const ACTION_HANDLERS = {
 // ------------------------------------
 const INITIAL_STATE = { data: {} };
 
-export default function projectReducer (state: mixed = INITIAL_STATE, action: Action): mixed {
+export default function projectReducer(state: mixed = INITIAL_STATE, action: Action): mixed {
   const handler = ACTION_HANDLERS[action.type];
 
   return handler ? handler(state, action) : state;

@@ -1,30 +1,11 @@
 import axios from 'axios';
-// import io from 'socket.io-client';
-// import feathers from 'feathers-client';
-
 
 /* @flow */
 // ------------------------------------
 // Constants
 // ------------------------------------
 export const FETCH_COMMENTS = 'FETCH_COMMENTS';
-// const BASE_URL = 'http://127.0.0.1:3030/api/v1';
 const BASE_URL = 'http://127.0.0.1:3030';
-
-// export function streamComments(id) {
-//   const socket = io(BASE_URL);
-//   const app = feathers()
-//     .configure(feathers.hooks())
-//     .configure(feathers.socketio(socket));
-
-//   const commentsService = app.service('comments');
-
-//   commentsService.on('created', function (comment) {
-//     console.log('comment created');
-//     console.log(comment);
-//     fetchComments(id);
-//   });
-// }
 
 // ------------------------------------
 // Actions
@@ -52,7 +33,10 @@ export const actions = {
 // ------------------------------------
 const ACTION_HANDLERS = {
   [FETCH_COMMENTS]: (state: mixed, action: { payload: mixed }): mixed => {
-    return {...state, data: action.payload.data };
+    return {
+      ...state,
+      data: action.payload.data
+    };
   }
 };
 
@@ -66,3 +50,4 @@ export default function commentsReducer(state: mixed = INITIAL_STATE, action: Ac
 
   return handler ? handler(state, action) : state;
 }
+

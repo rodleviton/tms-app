@@ -2,17 +2,15 @@ import { applyMiddleware, compose, createStore } from 'redux';
 import promise from 'redux-promise';
 import thunk from 'redux-thunk';
 import rootReducer from './rootReducer';
-import {responsiveStoreEnhancer} from 'redux-responsive';
+import { responsiveStoreEnhancer } from 'redux-responsive';
 import { routerMiddleware } from 'react-router-redux';
 
-export default function configureStore (initialState = {}, history) {
+export default function configureStore(initialState = {}, history) {
   // Compose final middleware and use devtools in debug environment
   let middleware = compose(responsiveStoreEnhancer, applyMiddleware(promise, thunk, routerMiddleware(history)));
 
   if (__DEBUG__) {
-    const devTools = window.devToolsExtension
-      ? window.devToolsExtension()
-      : require('containers/DevTools').default.instrument();
+    const devTools = window.devToolsExtension ? window.devToolsExtension() : require('containers/DevTools').default.instrument();
     middleware = compose(middleware, devTools);
   }
 
@@ -26,6 +24,7 @@ export default function configureStore (initialState = {}, history) {
       store.replaceReducer(nextRootReducer);
     });
   }
-  
+
   return store;
 }
+

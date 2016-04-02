@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import Header from 'components/Header/Header';
 import Navbar from 'components/Navbar/Navbar';
+import { StickyContainer } from 'react-sticky';
 import 'layouts/CoreLayout/CoreLayout.scss';
 
 // Note: Stateless/function components *will not* hot reload!
@@ -12,15 +13,15 @@ import 'layouts/CoreLayout/CoreLayout.scss';
 //
 // CoreLayout is a pure function of its props, so we can
 // define it with a plain javascript function...
-function CoreLayout ({ children }) {
+function CoreLayout({ children }) {
   return (
-    <div className='page-container'>
+    <StickyContainer className='page-container'>
       <Navbar />
       <Header />
       <div className='view-container'>
         {children}
       </div>
-    </div>
+    </StickyContainer>
   );
 }
 

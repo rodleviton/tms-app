@@ -4,15 +4,16 @@ type Props = {
 
 };
 
-export class <%= pascalEntityName %> extends React.Component {
+export class <%= pascalEntityName %>
+extends React.Component {
   props: Props;
 
-  render () {
+  render() {
     return (
       <div></div>
-    )
-  }
+    );
+  };
 }
 
-export default <%= pascalEntityName %>
+export default <%= pascalEntityName %>;
 

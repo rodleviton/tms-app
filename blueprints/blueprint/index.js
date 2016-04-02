@@ -1,13 +1,13 @@
 module.exports = {
-  description () {
+  description() {
     return 'generates a blueprint and definition';
   },
 
-  beforeInstall () {
+  beforeInstall() {
     console.log('Before installation hook!');
   },
 
-  afterInstall () {
+  afterInstall() {
     console.log('After installation hook!');
   }
 };

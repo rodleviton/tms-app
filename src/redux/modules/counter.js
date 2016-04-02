@@ -12,7 +12,7 @@ export const COUNTER_INCREMENT = 'COUNTER_INCREMENT';
 // if you'd like to learn more you can check out: flowtype.org.
 // DOUBLE NOTE: there is currently a bug with babel-eslint where a `space-infix-ops` error is
 // incorrectly thrown when using arrow functions, hence the oddity.
-export function increment (value: number = 1): Action {
+export function increment(value: number = 1): Action {
   return {
     type: COUNTER_INCREMENT,
     payload: value
@@ -52,7 +52,7 @@ const ACTION_HANDLERS = {
 // Reducer
 // ------------------------------------
 const initialState = 0;
-export default function counterReducer (state: number = initialState, action: Action): number {
+export default function counterReducer(state: number = initialState, action: Action): number {
   const handler = ACTION_HANDLERS[action.type];
 
   return handler ? handler(state, action) : state;

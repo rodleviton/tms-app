@@ -1,30 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ScrollArea from 'react-scrollbar';
-import { updateLayout } from '../../redux/modules/layout';
+import Scrollbars from 'react-custom-scrollbars';
 import { FormattedRelative } from 'react-intl';
-import styles from '../../views/ProjectView/ProjectView.scss';
 
 type Props = {
-
+  layout: mixed,
+  browser: mixed,
+  comments: mixed
 };
 
 export class CommentsList extends React.Component {
   props: Props;
 
-  componentDidMount (nextProps) {
+  componentDidMount(nextProps) {
     this.forceUpdate();
   }
 
-  getCommentsStyles () {
-    const commentsHeader = this.props.layout.commentsHeader;
-
-    if (commentsHeader) {
-      return { marginTop: this.props.layout.commentsHeader.height + 'px' };
-    }
-  }
-
-  getCommentsScrollAreaStyles () {
+  getStyles() {
     const header = this.props.layout.header;
     const commentsHeader = this.props.layout.commentsHeader;
 
@@ -34,7 +26,7 @@ export class CommentsList extends React.Component {
     }
   }
 
-  renderComment (comment) {
+  renderComment(comment) {
     let replies = '';
 
     if (comment.replies) {
@@ -76,37 +68,31 @@ export class CommentsList extends React.Component {
           </div>
         </div>
 
-        <div className={ comment.replies.length ? 'comments' : '' }>
-          { replies }
+        <div className={comment.replies.length ? 'comments' : ''}>
+          {replies}
         </div>
       </div>
     );
   }
 
-  render () {
+  render() {
     const { comments } = this.props;
 
     return (
-      <div style={this.getCommentsStyles()}>
-        <ScrollArea speed={0.8} className='area' smoothScrolling={true} style={this.getCommentsScrollAreaStyles()} contentClassName='content' horizontal={false}>
-          <div className='comments'>
-            {comments.map(this.renderComment)}
-          </div>
-        </ScrollArea>
-      </div>
-    )
+      <Scrollbars style={this.getStyles()} className='comments'>
+        {comments.map(this.renderComment)}
+      </Scrollbars>
+    );
   }
 }
 
 const mapStateToProps = (state, ownProps) => {
-  return { 
+  return {
     browser: state.browser,
     layout: state.layout
   };
 };
 
-
 export default connect(
   mapStateToProps
 )(CommentsList);
-
